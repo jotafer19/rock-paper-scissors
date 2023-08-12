@@ -11,10 +11,37 @@
             const minNumber = 0;
             const maxNumber = 3;
             let randomNumber = Math.floor(Math.random() * (maxNumber - minNumber) + minNumber);
-            console.log(randomNumber);
-        };
+            if (randomNumber === 0) {
+                return "rock";
+            } else if (randomNumber === 1) {
+                return "paper";
+            } else {
+                return "scissors";
+            }
+        }
 
-        getComputerChoice();
+        function playerSelection() {
+            choice = prompt("Choose between rock, paper or scissors:");
+            return choice.toLowerCase();
+        }
+
+        function playRound(playerChoice, computerChoice) {
+            playerChoice = playerChoice[0].toUpperCase() + playerChoice.slice(1);
+            computerChoice = computerChoice[0].toUpperCase() + computerChoice.slice(1);
+            if (playerChoice === "Rock" && computerChoice === "Scissors" || 
+                playerChoice === "Paper" && computerChoice === "Rock" ||
+                playerChoice === "Scissors" && computerChoice === "Paper") {
+                    return `You Win! ${playerChoice} beats ${computerChoice}`;
+                } else if (playerChoice === computerChoice){
+                    return "It's a draw!";
+                } else {
+                    return `You Lose! ${computerChoice} beats ${playerChoice}`;
+                }
+        }
+
+        const playerChoice = playerSelection();
+        const computerChoice = getComputerChoice();
+        console.log(playRound(playerChoice, computerChoice))
     </script>
     
 </body>
