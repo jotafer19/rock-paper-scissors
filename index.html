@@ -3,24 +3,44 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Rock Paper Scissors</title>
+    <link rel="stylesheet" href="./style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&family=Roboto&display=swap" rel="stylesheet">
 </head>
+
 <body>
     <script src="./script.js" defer></script>
 
-    <div class="player">
-        <div class="player-options">
-            <button id="rock">Rock</button>
-            <button id="paper">Paper</button>
-            <button id="scissors">Scissors</button>
-        </div>
-        <div class="player-score">Score: <span class="points">0</span></div>
+    <div class="header">ROCK PAPER SCISSORS</div>
+
+    <div class="info-container">
+        <div class="winner-announcer">Choose your weapon</div>
+        <div class="result">First to score 5 points wins!</div>
     </div>
 
-    <div class="computer">
-        <div class="computer-score">Score: <span class="points">0</span></div>
+    <div class="play-board">
+        <div class="scoreboard">
+            <div id="player-scoreboard">
+                <div class="icon-result" id="player-result">❔</div>
+                <div class="player-score">Player: <span class="points">0</span></div>
+            </div>
+            <div id="computer-scoreboard">
+                <div class="icon-result" id="computer-result">❔</div>
+                <div class="computer-score">Computer: <span class="points">0</span></div>
+            </div>
+        </div>   
+        <div class="player">
+            <div class="player-options">
+                <button class="player-selection" id="rock">✊</button>
+                <button class="player-selection" id="paper">✋</button>
+                <button class="player-selection" id="scissors">✌️</button>
+            </div> 
+        </div>
     </div>
-    
-    
+    <button id="reset-button">↻</button>
+    <div class="footer">The Odin Project © 2023</div>
 </body>
 </html>
